@@ -81,6 +81,12 @@ html, body {
       transform: translateX(-50%);
 }
 
+@media(max-width: 1080px){
+      .explore{
+            font-size: 7px;
+      }
+}
+
 #exploreBtn{
       cursor: pointer;
       color: rgb(192, 192, 192);
