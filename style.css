@@ -1,0 +1,646 @@
+
+/* STANDARDNO OBLIKOVANJE */
+
+html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      font-family: "Roboto Mono" !important;
+      background: #0f0f0f !important;
+      color: #fff !important;
+}
+
+::selection{ /* oblikujemo barvo kar označimo z miško */
+      background: rgba(180, 78, 78, 0.507);
+}
+
+.whitespace { /* kot alternativa <br> */
+      width: 100%;
+      height: 100px;
+}
+
+@media(max-width: 768px) { /* če imamo manjši ali enak zaslon 768 pixlov, presledke (prazen prostor) ne uporabimo */
+      .whitespace {
+            display: none;
+      }
+}
+
+/* TYPEWRITER OBLIKOVANJE */
+
+.line {
+      width: 24em;
+      top: 50%;
+      margin: auto;
+      border-right: 2px solid rgba(255, 255, 255, 0.75);
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      transform: translateY(-50%);
+}
+
+.anim-typewriter {
+      animation: typewriter 4.5s steps(40) 1s 1 normal both, /* TYPEWRITTER = trajanje animacije; STEPS = daljina preskoka kurzorja; 1s = ko odpremo stran, začne pisat po 1s; 1 = text ni loop, ampak ostane displayan; NORMAL BOOTH = INFINITE NORMAL = ena izmed možnih animacij; */
+      blinkTextCussor 500ms steps(40) infinite normal; /* 500ms = hitrost curzorja; INFINITE NORMAL = ena izmed možnih animacij; */
+}
+
+@keyframes typewriter { /* hitrost pisanja kurzorja (18em) */
+      from {
+            width: 0;
+      }
+      to {
+            width: 14em;
+      }
+}
+
+@media(max-width: 768px) { /* hitrost pisanja kurzorja (16em), pri oknu, manjšem od 768px */
+      @keyframes typewriter {
+            from {
+                  width: 0;
+            }
+            to {
+                  width: 13em;
+            }
+      }
+}
+
+@keyframes blinkTextCussor { /*barva kurzorja */
+      from {
+            border-right-color: red;
+      }
+      to {
+            border-right-color: transparent;
+      }
+}
+
+.explore{
+      position: fixed;
+      bottom: 37.5%;
+      opacity: 1;
+      margin-left: 50%;
+      transform: translateX(-50%);
+}
+
+#exploreBtn{
+      cursor: pointer;
+      color: rgb(192, 192, 192);
+      transition: all 2s ease-out;
+}
+
+#exploreBtn:hover{
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+      color:red;
+      opacity: .3;
+      transition: all 2s ease-out;
+}
+
+.copyright{
+      position: fixed;
+      bottom: 0;
+      opacity: .3;
+      margin-left: 50%;
+      transform: translateX(-50%); /* center text */
+      margin-bottom: 3%;
+}
+
+/* OBLIKOVANJE NAVIGACIJE */
+
+nav { /* oblikovanje same navigacijske vrstice */
+      width: 100%;
+      background: #0f0f0f;
+      height: 80px;
+      position: fixed;
+      z-index: 1;
+}
+
+nav #brand { /* oblikovanje "Nejc Ribič" */
+      float: left;
+      display: block;
+      margin-left: 82px;
+      line-height: 80px;
+      font-weight: bold;
+}
+
+nav #brand a { /* oblikovanje "Nejc Ribič" */
+      color: #fff;
+      transition: all 0.3s ease-out;
+}
+
+nav #brand a:hover { /* kaj se zgodi, ko gremo z miško preko "Nejc Ribič" */
+      text-decoration: none;
+}
+
+nav #menu { /* oblikovanje menuja */
+      float: left;
+      right: 80px;
+      position: fixed;
+}
+
+nav #menu li { /* oblikovanje <li> (work, about...) elementov */
+      padding-left: 40px;
+      display: inline-block;
+      cursor: pointer;
+      font-weight: 300;
+      line-height: 80px;
+      position: relative;
+      transition: all 0.3s ease-out;
+}
+
+nav #menu li span { /* oblikovanje <span> (.) elementov */
+      font-weight: 700;
+      color: red;
+}
+
+nav #menu li a { /* barva povezav (home, work, about...) */
+      color: #fff;
+      transition: all 0.5s ease-out;
+}
+
+nav #menu li a:hover { /* oblikovanje povezav (home, work, about...) ko gremo preko z miško */
+      text-decoration: none;
+      color: red;
+      transition: all 0.5s ease-in;
+}
+
+#toggle { /* hamburger menu (za manjše zaslone) */
+      position: absolute;
+      right: 30px;
+      top: 20px;
+      font-weight: 300;
+      z-index: 2;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      float: right;
+      transition: all 0.3s ease-out;
+      visibility: hidden;
+      opacity: 0;
+}
+
+#toggle span{ /* oblikovanje <span> elementa (pikica poleg MENU) */
+      color: red;
+}
+
+#resize .close-btn span{ /* oblikovanje <span> elementa (pikica poleg CLOSE) */
+      color: red;
+}
+
+.close-btn { /* oblikovanje gumba close */
+      position: absolute;
+      right: 16px;
+      font-weight: 300;
+      z-index: 2;
+      cursor: pointer;
+      top: -2px;
+      line-height: 80px;
+      transition: all 0.5s ease-out;
+}
+
+.close-btn:hover { /* oblikovanje gumba close */
+      transition: all 0.5s ease-in;
+      color: red;
+}
+
+#resize { /* oblikovanje okna v hamburger načinu - > način za manjše ekrane */
+      z-index: 1;
+      top: 0px;
+      position: fixed;
+      background: #0f0f0f;
+      width: 100%;
+      height: 100%;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 1s ease-out;
+}
+
+#resize #menu { /* postavitev texta v hamburger načinu */
+      height: 90px;
+      position: absolute;
+      left: 45%;
+      transform: translateX(-40%);
+      text-align: center;
+      display: table-cell;
+      vertical-align: center;
+}
+
+#resize #menu li { /* oblikovanje texta v hamburger načinu */
+      display: block;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 50px;
+      min-height: 50px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease-out;
+}
+
+#resize li:nth-child(1) { /* postavitev texta v hamburger načinu (oddaljenost od roba) */
+      margin-top: 275px;
+}
+
+#resize #menu li a { /* barva texta v hamburger načinu */
+      color: #fff;
+      transition: all 0.5s ease-out;
+}
+
+#resize #menu li a span { /* barva pikice v hamburger načinu */
+      color: red;
+}
+
+#resize #menu li a:hover { /* barva texta & pikice v hamburger načinu ko gremo preko z miško*/
+      color: red;
+      transition: all 0.5s ease-in;
+      text-decoration: none;
+}
+
+#resize.active { /* hamburger okno, ko pritisnemo menu */
+      visibility: visible;
+      opacity: 1;
+}
+
+@media(max-width: 768px) { /* prilagajanje elementov, ob uporabi manjšega zaslona; če je zaslon manjši ali enak 768px, elemente oblikujemo:*/
+      #toggle {
+            visibility: visible;
+            opacity: 1;
+            margin-top: 6px;
+            margin-right: 4px;
+            transition: all 0.5s ease-out;
+      }
+
+      #toggle:hover{
+            transition: all 0.5s ease-in;
+            color: red;
+      }
+
+      nav #brand {
+            margin-left: 24px;
+      }
+
+      #menu a {
+            font-size: 20px;
+            font-weight: 300;
+      }
+
+      #resize li span {
+            font-weight: bolder;
+      }
+
+      nav #menu {
+            display: none;
+      }
+}
+
+@media(min-width: 768px) { /* če pa zaslon v dolžino presega 768px, pa se #resize ne uporabi, ter se uporabniku prikaže klasična navigacijska vrstica */
+      #resize {
+            visibility: hidden !important;
+      }
+}
+
+/* OBLIKOVANJE 'HERO' WELCOME PAGE */
+
+.hero { /* pozicija ter splošo oblikovanje sekcije hero */
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+
+.hero h1 {
+      font-weight: lighter;
+      text-align: center;
+      letter-spacing: -2px;
+      line-height: 58px;
+}
+
+@media(max-width: 768px) { /* prilagajanje elementov, ob uporabi manjšega zaslona; če je zaslon manjši ali enak 768px, elemente oblikujemo: */
+      .header h1 {
+            font-size: 26px;
+      }
+}
+
+@keyframes fade_move_down {
+      0% {
+            transform: translate(0, -30px) rotate(45deg); /* rotacija puščice */
+            opacity: 0;
+      }
+      50% {
+            opacity: 1;
+      }
+      100% {
+            transform: translate(0, 20px) rotate(45deg); /* ker smo zgoraj le ustvarili pravokotni spodnji in desni kot, smo ju tukaj zasukali za 45deg, da izgleda v obliki puščice */
+            opacity: 0;
+      }
+}
+
+/* OBLIKOVANJE PROJEKTOV */
+
+.textGlitch { /* poravnava text glitch besedila na sredino  */
+      text-align: center;
+}
+
+.textGlitchNaslovi{ /* poravnava text glitch besedila na levo, velja za work sekcijo  */
+      text-align: none;
+      font-size: 29px;
+}
+
+.project01, .project02, .project03, .project04{
+      height: 555px; /* velikost (višina) thumbnail slikic */
+}
+
+@media(max-width: 7000px) { /* spet, prilagajamo elemente. Ob uporabi manjšega zaslona; če je zaslon manjši ali enak 1300px, elemente oblikujemo: */
+      .project01, .project02, .project03, .project04 {
+            width: 35% !important; /* obvezno, v manjšem načinu slike v dolžino 90%, pomeni na desni & levi strani malo prostora */
+            margin: 14px auto; /* prostor, ki je med slikam (thumbnaili) AUTO enakomerno razporedi prostor, da so vse slike enakomerno razporejene */
+      }
+
+      .project01::after, .project02::after, .project03::after, .project04::after { /* nehamo prikazovati content text */
+            display: none;
+      }
+
+      .project01{ /* ob prikazu manjšega  okna, spremenimo thumbnail sliko, v mapi thumbnail */
+            background: url("Images/project/project\ 1/thumbnail/ThumbnailText.jpg") no-repeat 50% 50%;;
+            background-size: cover;
+            filter: grayscale(1); /* koda za sivo sliko */
+            opacity: 1;
+            transition: 1s;
+      }
+
+      .project01:hover{
+            filter: grayscale(0);
+            opacity: 1;
+      }
+
+      .project02{
+            background: url("Images/project/project\ 2/thumbnail/ThumbnailText.jpg") no-repeat 50% 50%;;
+            background-size: cover;
+            filter: grayscale(1); 
+            opacity: 1;
+            transition: 1s;
+      }
+
+      .project02:hover{
+            filter: grayscale(0);
+            opacity: 1;
+      }
+
+      .project03{
+            background: url("Images/project/project\ 3/thumbnail/ThumbnailText.jpg") no-repeat 50% 50%;
+            background-size: cover;
+            filter: grayscale(1); 
+            opacity: 1;
+            transition: 1s;
+      }
+
+      .project03:hover{
+            filter: grayscale(0);
+            opacity: 1;
+      }
+}
+
+@media(max-width: 2500px){ /* pozicija elementov ob spremembi velikosti okna */
+      .project01, .project02, .project03, .project04 {
+            width: 45% !important; 
+            margin: 14px auto; /* prostor, ki je med slikam (thumbnaili) AUTO enakomerno razporedi prostor, da so vse slike enakomerno razporejene */
+      }
+}
+
+@media(max-width: 2000px){
+      .project01, .project02, .project03, .project04 {
+            width: 50% !important; 
+            margin: 14px auto; 
+      }
+}
+
+@media(max-width: 1500px){
+      .project01, .project02, .project03, .project04 {
+            width: 60% !important; 
+            margin: 14px auto; 
+      }
+}
+
+@media(max-width: 1000px){
+      .project01, .project02, .project03, .project04 {
+            width: 70% !important; 
+            margin: 14px auto; 
+      }
+}
+
+@media(max-width: 500px){
+      .project01, .project02, .project03, .project04 {
+            width: 80% !important; 
+            margin: 14px auto; 
+      }
+}
+
+@media(max-width: 300px){
+      .project01, .project02, .project03, .project04 {
+            width: 95% !important; 
+            margin: 14px auto; 
+      }
+}
+
+/* OBLIKOVANJE FOOTERJA */
+.ideas { /* postavitev elementa ideas */
+      text-align: right;
+}
+
+.ideas p { /* oblikovanje elementa ideas (samega texta) */
+      font-weight: lighter !important;
+      margin-bottom: 20px;
+}
+
+.hr { /* oblikovanje footer ločilne črte */
+      background:red;
+      height: 1px;
+}
+
+.info h4 { /* spreminjanje texta za mail */
+      font-size: 18px;
+      font-weight: lighter;
+}
+
+.info p { /* spreminjanje texta za follow/contact me */
+      color: grey;
+      font-weight: lighter;
+}
+
+.info li { /* spreminjanje texta za socialna omrežja */
+      font-weight: lighter;
+      color: #fff;
+      font-size: 18px;
+      padding-left: 20px;
+}
+
+#fb::before { /* :before = content '' besedilo postavimo pred <p> - spreminjanje texta, pozicije, barve za fb */
+      display: inline-block; /* inline-block omogoča postavitev width & height elementu */
+      content: '';
+      border-radius: 100%;
+      height: 4px;
+      width: 4px;
+      margin-right: 6px;
+      background: #3b5998;
+}
+
+
+#ig::before { /* :before = content '' besedilo postavimo pred <p> - spreminjanje texta, pozicije, barve za fb */
+      display: inline-block;
+      content: '';
+      border-radius: 100%;
+      height: 4px;
+      width: 4px;
+      margin-right: 6px;
+      background: #fcaf45;
+}
+
+
+#tw::before { /* :before = content '' besedilo postavimo pred <p> - spreminjanje texta, pozicije, barve za fb */
+      display: inline-block;
+      content: '';
+      border-radius: 100%;
+      height: 4px;
+      width: 4px;
+      margin-right: 6px;
+      background: #55acee;
+}
+
+
+#yt::before { /* :before = content '' besedilo postavimo pred <p> - spreminjanje texta, pozicije, barve za fb */
+      display: inline-block;
+      content: '';
+      border-radius: 100%;
+      height: 4px;
+      width: 4px;
+      margin-right: 6px;
+      background: #c4302b;
+}
+
+#MyMail{ /* spreminjanje texta za mail */
+      display: inline-block;
+      text-decoration: none;
+}
+
+#media, #address {
+      text-align: right;
+}
+
+#media ul {
+      list-style: none; /* načeloma odstrani pikice poleg texta, ampak jih prej že itak nisem uporabil, ker sem jih narisal (border radius, height, width, color) */
+}
+
+#media ul li {
+      display: inline-block; /* text oz. <li> text prikaže enega zraven drugega in ne enega pod drugim */
+}
+
+@media(max-width: 768px) { /* spet, prilagajamo elemente. Ob uporabi manjšega zaslona; če je zaslon manjši ali enak 768px, elemente oblikujemo: */
+      #media, #address {
+            text-align: center; 
+      }
+
+      .info ul { /* poravnamo <li> socialna omrežja na sredino, ob majhnem zaslonu */
+            margin: 0 0 0 -22px;
+            padding: 0;
+      }
+}
+
+/* WORK.HTML */
+
+.hero-content {
+      margin-left: 0%;
+}
+
+.hero-content p {
+      font-weight: 300;
+      line-height: 36px;
+      color: grey;
+}
+
+.hero-content h6 {
+      text-align: left;
+}
+
+@media(max-width: 768px) {
+      .hero-content {
+            padding-top: 50px;
+            width: 96%;
+            margin: 0 auto;
+      }
+}
+
+/* ABOUT.HTML */
+
+#BackgroundVideo{
+      height: 80%;
+      width: 100%;
+}
+
+/* CONTACT.HTML */
+
+#contact-form {
+      margin: 5% 1.4%; /* top and bottom & right and left % */
+}
+
+#contact-form ul {
+      list-style: none; /* brez oznake pri besedi */
+      border-radius: 5px;
+      margin-bottom: 40px;
+}
+
+#contact-form li {
+      padding: 12px; /* notrtanji odmik */
+}
+
+#contact-form li:last-of-type { /* zadnji <li> element brez border bottom */
+      border-bottom: none;
+}
+
+#contact-form label {
+      display: block; /* element postavimo v novo vrsto */
+      font-size: .9em;
+      color: #999;
+      padding-left: 5px;
+}
+
+#contact-form input, #contact-form textarea { /* oblikovanje input text */
+      width: 100%;
+      padding: 5px;
+      border: none;
+      resize: vertical;
+      background: transparent;
+      color: #fff;
+      font-weight: bolder;
+}
+
+input:focus {
+      outline: none;
+      border: none;
+}
+
+.textarea {
+      border-bottom: 1px solid #dfdfdf; /* ločilna črtica med inputi */
+}
+
+.sendContact { /* gumb */
+      margin-left: 50px;
+      padding: 20px 30px;
+      background: transparent;
+      color: #dfdfdf;
+      font-size: 14px;
+      letter-spacing: 2px;
+      transition: all 1s ease-out;
+}
+
+.sendContact:hover {
+      background: #dfdfdf;
+      color: #101010;
+      transition: all 1s ease-in;
+}
+
+@media(max-width: 768px) {
+      #contact-form {
+            margin: 5% -8%;
+            width: 100%;
+      }
+}
+
