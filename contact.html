@@ -28,6 +28,16 @@
       <!-- knjižnica za text glitch efekt. Link: https://camwiegert.github.io/baffle/ -->
       <script src="https://cdn.jsdelivr.net/npm/baffle@0.3.6/dist/baffle.min.js"></script>
 
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-FJ7GW56DW2"></script>
+      <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-FJ7GW56DW2');
+      </script>
+
 </head>
 <body>
       <div class="wrapper">
@@ -129,8 +139,6 @@
                               </li>
 
                               </ul>
-
-                              <div data-netlify-recaptcha="true"></div> <!-- confirm you are not a robot -->
 
                               <button type="submit" id="contact-submit" class="sendContact wow fadeInDown" data-wow-delay="2s">Send Message</button>
 
