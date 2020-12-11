@@ -225,10 +225,8 @@ nav #menu li a:hover { /* oblikovanje povezav (home, work, about...) ko gremo pr
       height: 90px;
       position: absolute;
       left: 45%;
-      transform: translateX(-40%);
+      transform: translateX(-50%);
       text-align: center;
-      display: table-cell;
-      vertical-align: center;
 }
 
 #resize #menu li { /* oblikovanje texta v hamburger načinu */
@@ -243,7 +241,7 @@ nav #menu li a:hover { /* oblikovanje povezav (home, work, about...) ko gremo pr
 }
 
 #resize li:nth-child(1) { /* postavitev texta v hamburger načinu (oddaljenost od roba) */
-      margin-top: 275px;
+      margin-top: 235px;
 }
 
 #resize #menu li a { /* barva texta v hamburger načinu */
