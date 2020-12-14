@@ -44,7 +44,7 @@ html, body {
       blinkTextCussor 500ms steps(40) infinite normal; /* 500ms = hitrost curzorja; INFINITE NORMAL = ena izmed možnih animacij; */
 }
 
-@keyframes typewriter { /* hitrost pisanja kurzorja (18em) */
+@keyframes typewriter { /* hitrost pisanja kurzorja (14em) */
       from {
             width: 0;
       }
@@ -53,7 +53,7 @@ html, body {
       }
 }
 
-@media(max-width: 768px) { /* hitrost pisanja kurzorja (16em), pri oknu, manjšem od 768px */
+@media(max-width: 768px) { /* hitrost pisanja kurzorja (13em), pri oknu, manjšem od 768px */
       @keyframes typewriter {
             from {
                   width: 0;
@@ -79,18 +79,6 @@ html, body {
       opacity: 1;
       margin-left: 50%;
       transform: translateX(-50%);
-}
-
-@media(max-width: 1440px){
-      .explore{
-            bottom: 38%;
-      }
-}
-
-@media(max-width: 1440px){
-      #exploreBtn{
-            font-size: 10px;
-      }
 }
 
 @media(max-width: 765px){
@@ -346,18 +334,6 @@ nav #menu li a:hover { /* oblikovanje povezav (home, work, about...) ko gremo pr
       text-align: center;
       letter-spacing: -2px;
       line-height: 58px;
-}
-
-@media(max-width: 1440px) { /* prilagajanje elementov, ob uporabi manjšega zaslona; če je zaslon manjši ali enak 768px, elemente oblikujemo: */
-      .header h1{
-            font-size: 24px;
-      }
-}
-
-@media(max-width: 1080px) { /* prilagajanje elementov, ob uporabi manjšega zaslona; če je zaslon manjši ali enak 768px, elemente oblikujemo: */
-      .header h1{
-            font-size: 23px;
-      }
 }
 
 @media(max-width: 768px) { /* prilagajanje elementov, ob uporabi manjšega zaslona; če je zaslon manjši ali enak 768px, elemente oblikujemo: */
