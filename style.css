@@ -93,6 +93,12 @@ html, body {
       }
 }
 
+@media(max-width: 475px){
+      #exploreBtn{
+            font-size: 8px;
+      }
+}
+
 #exploreBtn{
       cursor: pointer;
       color: rgb(192, 192, 192);
@@ -119,13 +125,13 @@ html, body {
 
 @media(max-width: 1080px){
       .copyright{
-            font-size: 17px;
+            font-size: 12px;
       }
 }
 
 @media(max-width: 765px){
       .copyright{
-            font-size: 15px;
+            font-size: 9px;
       }
 }
 
@@ -337,14 +343,14 @@ nav #menu li a:hover { /* oblikovanje povezav (home, work, about...) ko gremo pr
 }
 
 @media(max-width: 768px) { /* prilagajanje elementov, ob uporabi manjšega zaslona; če je zaslon manjši ali enak 768px, elemente oblikujemo: */
-      .header h1 {
-            font-size: 24px;
+      .header h1{
+            font-size: 22px;
       }
 }
 
-@media(max-width: 1080px){
+@media(max-width: 475px) { /* prilagajanje elementov, ob uporabi manjšega zaslona; če je zaslon manjši ali enak 768px, elemente oblikujemo: */
       .header h1{
-            font-size: 26px;
+            font-size: 20px;
       }
 }
 
