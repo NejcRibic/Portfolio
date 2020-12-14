@@ -82,8 +82,14 @@ html, body {
 }
 
 @media(max-width: 1080px){
-      .explore{
-            font-size: 12px;
+      #exploreBtn{
+            font-size: 13px;
+      }
+}
+
+@media(max-width: 765px){
+      #exploreBtn{
+            font-size: 10px;
       }
 }
 
@@ -109,6 +115,18 @@ html, body {
       margin-left: 50%;
       transform: translateX(-50%); /* center text */
       margin-bottom: 3%;
+}
+
+@media(max-width: 1080px){
+      .copyright{
+            font-size: 17px;
+      }
+}
+
+@media(max-width: 765px){
+      .copyright{
+            font-size: 15px;
+      }
 }
 
 /* OBLIKOVANJE NAVIGACIJE */
@@ -320,6 +338,12 @@ nav #menu li a:hover { /* oblikovanje povezav (home, work, about...) ko gremo pr
 
 @media(max-width: 768px) { /* prilagajanje elementov, ob uporabi manjšega zaslona; če je zaslon manjši ali enak 768px, elemente oblikujemo: */
       .header h1 {
+            font-size: 24px;
+      }
+}
+
+@media(max-width: 1080px){
+      .header h1{
             font-size: 26px;
       }
 }
