@@ -75,15 +75,21 @@ html, body {
 
 .explore{
       position: fixed;
-      bottom: 37.5%;
+      bottom: 39%;
       opacity: 1;
       margin-left: 50%;
       transform: translateX(-50%);
 }
 
-@media(max-width: 1080px){
+@media(max-width: 1440px){
+      .explore{
+            bottom: 41%;
+      }
+}
+
+@media(max-width: 1440px){
       #exploreBtn{
-            font-size: 13px;
+            font-size: 10px;
       }
 }
 
@@ -342,6 +348,18 @@ nav #menu li a:hover { /* oblikovanje povezav (home, work, about...) ko gremo pr
       line-height: 58px;
 }
 
+@media(max-width: 1440px) { /* prilagajanje elementov, ob uporabi manjšega zaslona; če je zaslon manjši ali enak 768px, elemente oblikujemo: */
+      .header h1{
+            font-size: 24px;
+      }
+}
+
+@media(max-width: 1080px) { /* prilagajanje elementov, ob uporabi manjšega zaslona; če je zaslon manjši ali enak 768px, elemente oblikujemo: */
+      .header h1{
+            font-size: 23px;
+      }
+}
+
 @media(max-width: 768px) { /* prilagajanje elementov, ob uporabi manjšega zaslona; če je zaslon manjši ali enak 768px, elemente oblikujemo: */
       .header h1{
             font-size: 22px;
@@ -351,6 +369,12 @@ nav #menu li a:hover { /* oblikovanje povezav (home, work, about...) ko gremo pr
 @media(max-width: 475px) { /* prilagajanje elementov, ob uporabi manjšega zaslona; če je zaslon manjši ali enak 768px, elemente oblikujemo: */
       .header h1{
             font-size: 20px;
+      }
+}
+
+@media(max-width: 290px) { /* prilagajanje elementov, ob uporabi manjšega zaslona; če je zaslon manjši ali enak 768px, elemente oblikujemo: */
+      .header h1{
+            font-size: 17px;
       }
 }
 
