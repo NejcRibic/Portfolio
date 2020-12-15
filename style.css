@@ -40,7 +40,7 @@ html, body {
 }
 
 .anim-typewriter {
-      animation: typewriter 4.5s steps(40) 1s 1 normal both, /* TYPEWRITTER = trajanje animacije; STEPS = daljina preskoka kurzorja; 1s = ko odpremo stran, začne pisat po 1s; 1 = text ni loop, ampak ostane displayan; NORMAL BOOTH = INFINITE NORMAL = ena izmed možnih animacij; */
+      animation: typewriter 3s steps(40) 1s 1 normal both, /* TYPEWRITTER = trajanje animacije; STEPS = daljina preskoka kurzorja; 1s = ko odpremo stran, začne pisat po 1s; 1 = text ni loop, ampak ostane displayan; NORMAL BOOTH = INFINITE NORMAL = ena izmed možnih animacij; */
       blinkTextCussor 500ms steps(40) infinite normal; /* 500ms = hitrost curzorja; INFINITE NORMAL = ena izmed možnih animacij; */
 }
 
