@@ -40,7 +40,7 @@ html, body {
 }
 
 .anim-typewriter {
-      animation: typewriter 3s steps(40) 1s 1 normal both, /* TYPEWRITTER = trajanje animacije; STEPS = daljina preskoka kurzorja; 1s = ko odpremo stran, začne pisat po 1s; 1 = text ni loop, ampak ostane displayan; NORMAL BOOTH = INFINITE NORMAL = ena izmed možnih animacij; */
+      animation: typewriter 2.5s steps(40) 1s 1 normal both, /* TYPEWRITTER = trajanje animacije; STEPS = daljina preskoka kurzorja; 1s = ko odpremo stran, začne pisat po 1s; 1 = text ni loop, ampak ostane displayan; NORMAL BOOTH = INFINITE NORMAL = ena izmed možnih animacij; */
       blinkTextCussor 500ms steps(40) infinite normal; /* 500ms = hitrost curzorja; INFINITE NORMAL = ena izmed možnih animacij; */
 }
 
@@ -336,9 +336,9 @@ nav #menu li a:hover { /* oblikovanje povezav (home, work, about...) ko gremo pr
       line-height: 58px;
 }
 
-@media(max-width: 768px) { /* prilagajanje elementov, ob uporabi manjšega zaslona; če je zaslon manjši ali enak 768px, elemente oblikujemo: */
+@media(max-width: 668px) { /* prilagajanje elementov, ob uporabi manjšega zaslona; če je zaslon manjši ali enak 768px, elemente oblikujemo: */
       .header h1{
-            font-size: 22px;
+            font-size: 21px;
       }
 }
 
