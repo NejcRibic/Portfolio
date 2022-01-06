@@ -431,6 +431,19 @@ nav #menu li a:hover { /* oblikovanje povezav (home, work, about...) ko gremo pr
             filter: grayscale(0);
             opacity: 1;
       }
+
+      .project04{
+            background: url("Images/project/project\ 4/thumbnail/ThumbnailText.jpg") no-repeat 50% 50%;
+            background-size: cover;
+            filter: grayscale(1); 
+            opacity: 1;
+            transition: 1s;
+      }
+
+      .project04:hover{
+            filter: grayscale(0);
+            opacity: 1;
+      }
 }
 
 @media(max-width: 2500px){ /* pozicija elementov ob spremembi velikosti okna */
