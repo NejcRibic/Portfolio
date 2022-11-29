@@ -692,3 +692,6 @@ input:focus {
       }
 }
 
+p{
+      text-align: justify;
+}
