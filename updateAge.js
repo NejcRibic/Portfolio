@@ -1,4 +1,4 @@
-const birthDate = new Date('05-08-2000'); // Your birthday in YYYY-MM-DD format
+const birthDate = new Date('05-08-2002'); // Your birthday in YYYY-MM-DD format
 const currentDate = new Date();
 const age = currentDate.getFullYear() - birthDate.getFullYear();
 
