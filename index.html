@@ -98,13 +98,18 @@
                         </div>
                   </div> 
 
-                        <script>
-                              // Get the current year
-                              var currentYear = new Date().getFullYear();
-                          
-                              // Update the content of the elements
-                              document.getElementById("currentYear").innerText = currentYear;
-                        </script>
+                  <script>
+                        function updateYear() {
+                            var currentYear = new Date().getFullYear();
+                            document.getElementById("currentYear").innerText = currentYear;
+                        }
+                    
+                        // Initial update
+                        updateYear();
+                    
+                        // Set up interval to update the year every 24 hours (86400000 milliseconds)
+                        setInterval(updateYear, 86400000);
+                  </script>
                         
                         <script type="text/javascript">
                               const text = baffle(".textGlitch");
