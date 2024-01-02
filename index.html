@@ -94,9 +94,12 @@
                   <div class="textGlitch wow fadeInUp" data-wow-delay="3s">
                         
                         <div>
-                        <p class="wow fadeInUp">Copyright © <script>document.write(new Date().getFullYear());</script> Nejc Ribič. All rights reserved.</p>
+                              <p class="wow fadeInUp">Copyright © <span id="copyrightYear"></span> Nejc Ribič. All rights reserved.</p>
+                              <script>
+                                  document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+                              </script>
                         </div>
-                        
+
                         <script src="updateCopyrightYear.js"></script>
                         
                     </div> <!-- wow fadeInDown je knjižnica za animacije: https://wowjs.uk/-->
