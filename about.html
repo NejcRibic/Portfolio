@@ -114,8 +114,22 @@
                                     <p class="wow fadeInUp" data-wow-delay="0.8s">I am deeply committed to building a future that embodies my personal ethos, encapsulated by the phrase "The architecture of my own future". My life is driven by a relentless pursuit of passion, motivation, and joy. As an individual with diverse interests and hobbies, I find fulfillment in exploring the realms of fashion, cars, technology, finances, investments, watches, architectural design, digital media manipulation, music, programming, website building, and aviation. My creative approach is rooted in the principles of minimalism, and I constantly seek to apply modern thinking and innovative problem-solving methodologies to all of my pursuits.</p>
 
                                     <p class="wow fadeInUp" data-wow-delay="1.2s">My name is Nejc Ribič, and I am a <span id="age-span"></span>-year-old individual from Slovenia who is fluent in Slovenian, Croatian, and English. Additionally, I am currently studying German to expand my linguistic abilities. As an avid learner, I do not believe in giving up and always strive for growth. I am currently pursuing a degree in economics at a college and hope to hone my skills further to work in a challenging environment with new opportunities to provide quality service for individuals and organizations worldwide.</p>
-                                    
-                                    <script src="updateAge.js"></script>
+
+                                    <script>
+                                          const birthDate = new Date('2002-05-08'); // Your birthday in YYYY-MM-DD format
+                                        
+                                          const updateAge = () => {
+                                            const currentDate = new Date();
+                                            const age = currentDate.getFullYear() - birthDate.getFullYear();
+                                            document.getElementById('age-span').textContent = age;
+                                          };
+                                        
+                                          // Initial update
+                                          updateAge();
+                                        
+                                          // Set up interval to update the age every year (31536000000 milliseconds)
+                                          setInterval(updateAge, 31536000000);
+                                    </script>
 
                                     <p class="wow fadeInUp" data-wow-delay="1.6s">During my academic journey under the guidance of my senior high school and vocational college, I have completed several practical trainings both in my home country and abroad. These trainings have enabled me to broaden my knowledge and expertise in various areas, including business, teamwork, time management, problem-solving, English communication, and the usage of digital tools such as Microsoft Office 365, Adobe tools, and other Office-driven applications. Through these experiences, I have been able to stay abreast of technological innovations, and they have provided me with valuable insights and skills that I can apply to future endeavors.</p>
 
@@ -155,7 +169,7 @@
                                                 // Set up interval to update the year every 24 hours (86400000 milliseconds)
                                                 setInterval(updateYear, 86400000);
                                           </script>
-                                          
+
                                     </div>
                               </div>
                         </div>
