@@ -115,18 +115,25 @@
 
                                     <p class="wow fadeInUp" data-wow-delay="1.2s">My name is Nejc Ribič, and I am a <span id="age-span"></span>-year-old individual from Slovenia who is fluent in Slovenian, Croatian, and English. Additionally, I am currently studying German to expand my linguistic abilities. As an avid learner, I do not believe in giving up and always strive for growth. I am currently pursuing a degree in economics at a college and hope to hone my skills further to work in a challenging environment with new opportunities to provide quality service for individuals and organizations worldwide.</p>
 
-                                    <script>
+                                    <script> // auto updates my age
                                           const birthDate = new Date('2002-05-08'); // Your birthday in YYYY-MM-DD format
-                                        
+                                      
                                           const updateAge = () => {
-                                            const currentDate = new Date();
-                                            const age = currentDate.getFullYear() - birthDate.getFullYear();
-                                            document.getElementById('age-span').textContent = age;
+                                              const currentDate = new Date();
+                                              let age = currentDate.getFullYear() - birthDate.getFullYear();
+                                      
+                                              // Adjust age based on the birthdate in the current year
+                                              if (currentDate.getMonth() < birthDate.getMonth() ||
+                                                  (currentDate.getMonth() === birthDate.getMonth() && currentDate.getDate() < birthDate.getDate())) {
+                                                  age--;
+                                              }
+                                      
+                                              document.getElementById('age-span').textContent = age;
                                           };
-                                        
+                                      
                                           // Initial update
                                           updateAge();
-                                        
+                                      
                                           // Set up interval to update the age every year (31536000000 milliseconds)
                                           setInterval(updateAge, 31536000000);
                                     </script>
@@ -160,13 +167,18 @@
                                           <script>
                                                 function updateYear() {
                                                     var currentYear = new Date().getFullYear();
-                                                    document.getElementById("currentYear").innerText = currentYear;
+                                                    var copyrightYearElement = document.getElementById("currentYear");
+                                            
+                                                    // Check if the displayed year is different from the current year
+                                                    if (copyrightYearElement.innerText !== currentYear.toString()) {
+                                                        copyrightYearElement.innerText = currentYear;
+                                                    }
                                                 }
                                             
                                                 // Initial update
                                                 updateYear();
                                             
-                                                // Set up interval to update the year every 24 hours (86400000 milliseconds)
+                                                // Set up interval to check for the new year every 24 hours (86400000 milliseconds)
                                                 setInterval(updateYear, 86400000);
                                           </script>
 

@@ -167,16 +167,21 @@
                                     <script>
                                           function updateYear() {
                                               var currentYear = new Date().getFullYear();
-                                              document.getElementById("currentYear").innerText = currentYear;
+                                              var copyrightYearElement = document.getElementById("currentYear");
+                                      
+                                              // Check if the displayed year is different from the current year
+                                              if (copyrightYearElement.innerText !== currentYear.toString()) {
+                                                  copyrightYearElement.innerText = currentYear;
+                                              }
                                           }
                                       
                                           // Initial update
                                           updateYear();
                                       
-                                          // Set up interval to update the year every 24 hours (86400000 milliseconds)
+                                          // Set up interval to check for the new year every 24 hours (86400000 milliseconds)
                                           setInterval(updateYear, 86400000);
                                     </script>
-                                    
+
                               </div>
                         </div>
 
